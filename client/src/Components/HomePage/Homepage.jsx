@@ -2,6 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import Navigation from "../Navigation/Navigation.jsx";
 import Feeds from "../Feeds/Feeds.jsx";
+import RightHomePage from "../RightHomePage/RightHomePage.jsx";
 
 const Homepage = () => {
   return (
@@ -13,13 +14,18 @@ const Homepage = () => {
         </Grid>
 
         {/* middle column */}
-        <Grid item xs={12} lg={6} className=" lg:block w-full relative">
+        <Grid
+          item
+          xs={12}
+          lg={6}
+          className="px-5 lg:px-9 lg:block w-full relative"
+        >
           <Feeds />
         </Grid>
 
         {/* right column */}
         <Grid item xs={0} lg={3.5} className="hidden lg:block w-full relative">
-          <p className="text-center">Right part</p>
+          <RightHomePage />
         </Grid>
       </Grid>
     </div>

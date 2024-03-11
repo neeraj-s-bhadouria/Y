@@ -50,8 +50,8 @@ const Feeds = () => {
                 <input
                   type="text"
                   name="content"
-                  placeholder="Alhamdullilah, What's up?"
-                  className="border-none outline-none text-xl bg-transparent"
+                  placeholder="Alhamdullilah, Sab Khairiyat?"
+                  className="border-none outline-none text-xl w-full bg-transparent"
                   {...formik.getFieldProps("content")}
                 />
                 {formik.errors.content && formik.touched.content && (
@@ -91,7 +91,9 @@ const Feeds = () => {
         </div>
       </section>
       <section>
-        <BarkCard />
+        {[1, 1, 1, 1, 1].map((item) => (
+          <BarkCard />
+        ))}
       </section>
     </div>
   );

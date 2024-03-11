@@ -57,14 +57,14 @@ const Navigation = () => {
         </div>
         {/* Profile Details Display */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
             {/* Profile Picture Display */}
             <Avatar alt="userIcon" src={userIcon} />
             {/* User Handle Display */}
             <div>
-              <span>Maulana Neeraj-Bin-Yaddasht</span>
+              <span>Maulana Neeraj</span>
               <br />
-              <span className="opacity-70">@maulana-neeraj-bin-yaddasht</span>
+              <span className="opacity-70">@maulana-neeraj</span>
             </div>
 
             <Button
