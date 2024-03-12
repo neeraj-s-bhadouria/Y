@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={true ? <Homepage /> : <Authentication />} />
+      <Route path="/*" element={true ? <Homepage /> : <Authentication />} />
     </Routes>
   );
 };

@@ -3,6 +3,9 @@ import { Grid } from "@mui/material";
 import Navigation from "../Navigation/Navigation.jsx";
 import Feeds from "../Feeds/Feeds.jsx";
 import RightHomePage from "../RightHomePage/RightHomePage.jsx";
+import { Route, Routes } from "react-router-dom";
+import Profile from "../Profile/Profile.jsx";
+import BarkDetails from "../BarkDetails/BarkDetails.jsx";
 
 const Homepage = () => {
   return (
@@ -20,7 +23,11 @@ const Homepage = () => {
           lg={6}
           className="px-5 lg:px-9 lg:block w-full relative"
         >
-          <Feeds />
+          <Routes>
+            <Route path="/" element={<Feeds />} />
+            <Route path="/profile/:profileId" element={<Profile />} />
+            <Route path="/bark/:barkId" element={<BarkDetails />} />
+          </Routes>
         </Grid>
 
         {/* right column */}

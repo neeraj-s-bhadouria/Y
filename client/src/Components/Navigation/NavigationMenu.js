@@ -13,7 +13,7 @@ export const navigation = [
     id: 1,
     title: "Home",
     icon: <HomeIcon />,
-    path: "/home",
+    path: "/",
   },
   {
     id: 2,

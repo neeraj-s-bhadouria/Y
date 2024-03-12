@@ -3,8 +3,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { Button } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import SubscriptionModal from "./SubscriptionModal";
 
 const RightHomePage = () => {
+  const [openSubscriptionModal, setOpenSubscriptionModal] =
+    React.useState(false);
+  const handleOpenSubscriptionModal = () => setOpenSubscriptionModal(true);
+  const handleClose = () => setOpenSubscriptionModal(false);
+
   const handleChangeTheme = () => {
     console.log("Changing theme");
   };
@@ -30,6 +36,7 @@ const RightHomePage = () => {
         <Button
           variant="contained"
           sx={{ padding: "10px", paddingX: "20px", borderRadius: "25px" }}
+          onClick={handleOpenSubscriptionModal}
         >
           Get Verified
         </Button>
@@ -44,12 +51,18 @@ const RightHomePage = () => {
           <div className="flex justify-between w-full">
             <div>
               <p>Entertainment . Trending</p>
-              <p className="font-bold">Kejriwal's Launda dance</p>
+              <p className="font-bold">Kejriwal ka Launda Naach</p>
               <p>69.72k Rebarks</p>
             </div>
             <MoreHorizIcon />
           </div>
         ))}
+      </section>
+      <section>
+        <SubscriptionModal
+          handleClose={handleClose}
+          open={openSubscriptionModal}
+        />
       </section>
     </div>
   );

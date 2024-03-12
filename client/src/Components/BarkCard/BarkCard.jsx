@@ -13,11 +13,13 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import ReplyModal from "./ReplyModal";
 
 const BarkCard = () => {
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openReplyModal, setOpenReplyModal] = React.useState(false);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -27,9 +29,8 @@ const BarkCard = () => {
     setAnchorEl(null);
   };
 
-  const handleOpenReplyModel = () => {
-    console.log("Let's Bite this mf...");
-  };
+  const handleOpenReplyModal = () => setOpenReplyModal(true);
+  const handleClose = () => setOpenReplyModal(false);
 
   const handleClickRebark = () => {
     console.log("ReBarking someone else's bark");
@@ -40,12 +41,12 @@ const BarkCard = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="flex item-center font-semibold text-gray-700 py-2">
         <RepeatIcon className="text-[#1d9bf0]" />
         <p>You barked again</p>
       </div>
-      <div className="flex space-x-5">
+      <div className="flex space-x-2">
         <Avatar
           onClick={() => navigate(`/profile/${6}`)}
           className="cursor-pointer"
@@ -90,7 +91,10 @@ const BarkCard = () => {
             </div>
           </div>
           <div className="mt-2">
-            <div className="cursor-pointer">
+            <div
+              onClick={() => navigate(`/bark/${4}`)}
+              className="cursor-pointer"
+            >
               <p className="mb-2 p-0">
                 It is Y, not an X clone. Nope, absolutely not.
               </p>
@@ -104,7 +108,7 @@ const BarkCard = () => {
               <div className="space-x-3 flex items-center text-gray-600">
                 <ChatBubbleOutlineIcon
                   className="cursor-pointer"
-                  onClick={handleOpenReplyModel}
+                  onClick={handleOpenReplyModal}
                 />
                 <p>72</p>
               </div>
@@ -140,21 +144,24 @@ const BarkCard = () => {
               <div className="space-x-3 flex items-center">
                 <BarChartIcon
                   className="cursor-pointer"
-                  onClick={handleOpenReplyModel}
+                  onClick={handleOpenReplyModal}
                 />
                 <p>69</p>
               </div>
               <div className="space-x-3 flex items-center">
                 <FileUploadIcon
                   className="cursor-pointer"
-                  onClick={handleOpenReplyModel}
+                  onClick={handleOpenReplyModal}
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <section>
+        <ReplyModal handleClose={handleClose} open={openReplyModal} />
+      </section>
+    </>
   );
 };
 
